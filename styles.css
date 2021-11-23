@@ -1,15 +1,9 @@
-#editor-container {
-  max-height: 200px;
-  overflow-y: auto;
-  font-size: 1rem;
-}
-
 #code_output {
   padding: 2rem 1rem;
   background: #efefef;
   width: -webkit-fill-available;
 }
 
-#editor {
-  margin: 2rem 0    ;
+#visual-editor {
+  margin: 2rem 0;
 }

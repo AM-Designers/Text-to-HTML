@@ -13,14 +13,14 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div id="editor">
-      <div id="editor-container">
+    <div id="visual-editor">
+      <div id="editor">
         <h1>Quill to HTML</h1>
         Add content here.
       </div>
     </div>
 
-    <div id="code_output"><code id="output-html"></code></div>
+    <div id="code_output"><code id="output_html"></code></div>
   </body>
 
   <!-- Include the Quill library -->
@@ -28,42 +28,60 @@
 
   <script>
     // Initialize QUill editor
-    var quill = new Quill("#editor-container", {
+    var toolbarOptions = [
+      //   [{ size: ["small", false, "large", "huge"] }], // custom dropdown
+      [{ header: [1, 2, 3, 4, 5, 6, false] }],
+      [{ font: [] }],
+      [{ align: [] }],
+
+      ["bold", "italic", "underline", "strike"], // toggled buttons
+      ["blockquote", "code-block"],
+
+      //   [{ header: 1 }, { header: 2 }], // custom button values
+      [{ list: "ordered" }, { list: "bullet" }],
+      [{ script: "sub" }, { script: "super" }], // superscript/subscript
+      [{ indent: "-1" }, { indent: "+1" }], // outdent/indent
+      [{ direction: "rtl" }], // text direction
+
+      [{ color: [] }, { background: [] }], // dropdown with defaults from theme
+
+      ["clean"], // remove formatting button
+    ];
+
+    var quill = new Quill("#editor", {
       modules: {
-        toolbar: [
-          [{ header: [1, 2, 3, 4, 5, 6, false] }],
-          ["bold", "italic", "underline", "strike"],
-          ["image", "code-block"],
-          ["link"],
-          [{ script: "sub" }, { script: "super" }],
-          [{ list: "ordered" }, { list: "bullet" }],
-          ["clean"],
-        ],
+        toolbar: toolbarOptions,
       },
       theme: "snow",
     });
 
-    quill.on("text-change", function (delta, source) {
-      updateHtmlOutput();
+    function updateHTML() {
+      document.getElementById("output_html").innerText = quill.root.innerHTML;
+    }
+
+    quill.on("text-change", () => {
+      updateHTML();
     });
 
-    // Return the HTML content of the editor
-    function getQuillHtml() {
-      return quill.root.innerHTML;
-    }
+    // HTML Formatter
+    // function format(html) {
+    //   var tab = "\t";
+    //   var result = "";
+    //   var indent = "";
 
-    // Highlight code output
-    function updateHighlight() {
-      hljs.highlightBlock(document.querySelector("#output-html"));
-    }
+    //   html.split(/>\s*</).forEach(function (element) {
+    //     if (element.match(/^\/\w/)) {
+    //       indent = indent.substring(tab.length);
+    //     }
 
-    function updateHtmlOutput() {
-      let html = getQuillHtml();
-      console.log(html);
-      document.getElementById("output-html").innerText = html;
-      updateHighlight();
-    }
+    //     result += indent + "<" + element + ">\r\n";
 
-    updateHtmlOutput();
+    //     if (element.match(/^<?\w[^>]*[^\/]$/) && !element.startsWith("input")) {
+    //       indent += tab;
+    //     }
+    //   });
+
+    //   return result.substring(1, result.length - 3);
+    // }
   </script>
 </html>
