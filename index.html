@@ -40,16 +40,10 @@
           ["clean"],
         ],
       },
-      placeholder: "Compose an epic...",
       theme: "snow",
     });
 
     quill.on("text-change", function (delta, source) {
-      updateHtmlOutput();
-    });
-
-    // When the convert button is clicked, update output
-    $("#btn-convert").on("click", () => {
       updateHtmlOutput();
     });
 
