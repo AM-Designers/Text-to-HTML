@@ -27,6 +27,8 @@
     var toolbarOptions = [
       //   [{ size: ["small", false, "large", "huge"] }], // custom dropdown
       [{ header: [1, 2, 3, 4, 5, 6, false] }],
+      [{ font: [] }],
+      [{ align: [] }],
 
       ["bold", "italic", "underline", "strike"], // toggled buttons
       ["blockquote", "code-block"],
@@ -38,11 +40,14 @@
       [{ direction: "rtl" }], // text direction
 
       [{ color: [] }, { background: [] }], // dropdown with defaults from theme
-      [{ font: [] }],
-      [{ align: [] }],
 
       ["clean"], // remove formatting button
     ];
+    // To detect star to list.
+    // document.addEventListener("keydown", (event) => {
+    //   if (event.key == "") {
+    //   }
+    // });
 
     var quill = new Quill("#editor", {
       modules: {
