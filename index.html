@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <h2>Visual Editor to HTML</h2>
+    <p>Press <strong> Ctrl + C </strong> to copy minified HTML.</p>
     <div id="visual-editor">
       <div id="editor">
         <h1>Quill to HTML</h1>
@@ -29,15 +31,17 @@
   <script>
     // Initialize QUill editor
     var toolbarOptions = [
-      //   [{ size: ["small", false, "large", "huge"] }], // custom dropdown
+      // Headers and Font
       [{ header: [1, 2, 3, 4, 5, 6, false] }],
       [{ font: [] }],
+      //   [{ size: ["small", false, "large", "huge"] }],
+
+      // Togglable buttons
       [{ align: [] }],
-
-      ["bold", "italic", "underline", "strike"], // toggled buttons
+      ["bold", "italic", "underline", "strike"],
       ["blockquote", "code-block"],
-
       //   [{ header: 1 }, { header: 2 }], // custom button values
+
       [{ list: "ordered" }, { list: "bullet" }],
       [{ script: "sub" }, { script: "super" }], // superscript/subscript
       [{ indent: "-1" }, { indent: "+1" }], // outdent/indent
@@ -83,5 +87,28 @@
 
     //   return result.substring(1, result.length - 3);
     // }
+    function selectText(node) {
+      node = document.getElementById(node);
+
+      if (document.body.createTextRange) {
+        const range = document.body.createTextRange();
+        range.moveToElementText(node);
+        range.select();
+      } else if (window.getSelection) {
+        const selection = window.getSelection();
+        const range = document.createRange();
+        range.selectNodeContents(node);
+        selection.removeAllRanges();
+        selection.addRange(range);
+      } else {
+        console.warn("Could not select text in node: Unsupported browser.");
+      }
+    }
+
+    document.addEventListener("copy", (event) => {
+      console.log("copy action initiated");
+      selectText("output_html");
+      event.clipboardData.setData("text/plain", selection);
+    });
   </script>
 </html>
