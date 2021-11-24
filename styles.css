@@ -77,7 +77,6 @@ p {
 **************/
 #main_content {
   display: flex;
-  direction: row;
 }
 
 .Top_Content {

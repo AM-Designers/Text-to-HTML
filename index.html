@@ -167,7 +167,16 @@
     document.addEventListener("copy", (event) => {
       console.log("copy action initiated");
       selectText("output_html");
-      event.clipboardData.setData("text/plain", selection);
+      event.clipboardData.setData("text/plain");
+    });
+
+    document.addEventListener("keydown", function (event) {
+      console.log(event.which);
+      if (event.shiftKey && event.which == 112) {
+        console.log("Shift + f1, was pressed");
+      } else if (event.shiftKey && event.which == 113) {
+        console.log("Shift + f1, was pressed");
+      }
     });
   </script>
 </html>
