@@ -5,6 +5,8 @@
 *** Content Area of Visual Editor
 
 ** Output Settings
+
+** Media Queries
 */
 
 :root {
@@ -35,13 +37,20 @@ body {
   min-height: 30vh;
 }
 
-/********************
+/*****************
 ** Output Settings 
-********************/
+******************/
 #code_output {
   padding: 2rem 1rem;
   background: #fff;
   border: var(--box-border);
   width: -webkit-fill-available;
   box-shadow: var(--box-shadow);
+}
+
+/***************
+** Media Queries
+****************/
+/* Thinking bg == #754aff */
+@media (min-width: 881px) {
 }
