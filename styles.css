@@ -1,24 +1,47 @@
+/* 
+** Body & Root
+
+** Visual Editor Settings
+*** Content Area of Visual Editor
+
+** Output Settings
+*/
+
+:root {
+  --box-shadow: 1px 2px 8px #00000038;
+  --box-border: 1px solid #ccc;
+  --shaded-white: #ebebeb;
+}
 body {
-  background: #ebebeb;
+  background: var(--shaded-white);
 }
 
-/* Visual Editor Settings */
+/************************ 
+** Visual Editor Settings 
+*************************/
 #visual-editor {
   margin: 2rem 0;
-  box-shadow: 1px 2px 8px #00000038;
+  box-shadow: var(--box-shadow);
 }
 
 .ql-editor,
 .ql-toolbar.ql-snow {
-  background: white;
-  background: #ffffff;
+  background: #fff;
 }
 
-/* Output Settings */
+/* Content Area of Visual Editor */
+.ql-editor {
+  padding: 2rem;
+  min-height: 30vh;
+}
+
+/********************
+** Output Settings 
+********************/
 #code_output {
   padding: 2rem 1rem;
-  background: #ffffff;
-  border: 1px solid #ccc;
+  background: #fff;
+  border: var(--box-border);
   width: -webkit-fill-available;
-  box-shadow: 1px 2px 8px #00000038;
+  box-shadow: var(--box-shadow);
 }
