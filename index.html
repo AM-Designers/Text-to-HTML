@@ -205,10 +205,12 @@
                 "body"
               ).style.background = `#${theme.classList[2].substring(1)}`)
             : "";
-            theme.checked == true
+          theme.checked == true
             ? (document.querySelector(
-                "body"
-              ).style.background = `#${theme.classList[2].substring(1)}`)
+                "#code_ouput"
+              ).style.background = `#code_output${theme.classList[2].substring(
+                1
+              )}`)
             : "";
         }
         //    #code_output === border-left: 6px solid #78ffa7;
