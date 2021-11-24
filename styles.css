@@ -214,33 +214,33 @@ input[type="radio"]:before {
   left: 0;
 }
 
-#radio_navy_blue:checked:after,
-#radio_green:checked:after,
-#radio_orange:checked:after,
-#radio_purple:checked:after,
-#radio_black:checked:after {
+.radio_navy_blue:checked:after,
+.radio_green:checked:after,
+.radio_orange:checked:after,
+.radio_purple:checked:after,
+.radio_black:checked:after {
   animation: radio_animation 0.3s linear;
   animation-fill-mode: forwards;
 }
 
-#radio_navy_blue:before {
+.radio_navy_blue:before {
   border: 2px solid #06c;
   background-color: #06c;
 }
-#radio_green:before {
+.radio_green:before {
   border: 2px solid #1cd05b;
   background-color: #1cd05b;
   /* #90C25D */
 }
-#radio_orange:before {
+.radio_orange:before {
   border: 2px solid #f69130;
   background-color: #f69130;
 }
-#radio_purple:before {
+.radio_purple:before {
   border: 2px solid #754aff;
   background-color: #754aff;
 }
-#radio_black:before {
+.radio_black:before {
   border: 2px solid #000;
   background-color: #000;
 }

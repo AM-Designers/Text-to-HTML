@@ -37,7 +37,7 @@
       <div id="right_content">
         <div id="right_inner_content">
           <h2>Configuration</h2>
-          <div>
+          <div id="optins">
             <h3>Options</h3>
             <p id="minified_html_checkbox">
               <input type="checkbox" /> Minified HTML
@@ -46,37 +46,32 @@
               <input type="checkbox" /> Formatted HTML
             </p>
           </div>
-          <div>
+          <div id="themes">
             <h3>Themes</h3>
             <input
               type="radio"
-              class="radio_animation"
+              class="radio_animation radio_navy_blue"
               name="radio_colors"
-              id="radio_navy_blue"
             />
             <input
               type="radio"
-              class="radio_animation"
+              class="radio_animation radio_green"
               name="radio_colors"
-              id="radio_green"
             />
             <input
               type="radio"
-              class="radio_animation"
+              class="radio_animation radio_orange"
               name="radio_colors"
-              id="radio_orange"
             />
             <input
               type="radio"
-              class="radio_animation"
+              class="radio_animation radio_purple"
               name="radio_colors"
-              id="radio_purple"
             />
             <input
               type="radio"
-              class="radio_animation"
+              class="radio_animation radio_black"
               name="radio_colors"
-              id="radio_black"
             />
           </div>
         </div>
@@ -148,7 +143,7 @@
     // }
     function selectText(node) {
       node = document.getElementById(node);
-
+      // Seclting Data
       if (document.body.createTextRange) {
         const range = document.body.createTextRange();
         range.moveToElementText(node);
@@ -164,12 +159,14 @@
       }
     }
 
+    // Performing Copy Action
     document.addEventListener("copy", (event) => {
       console.log("copy action initiated");
       selectText("output_html");
       event.clipboardData.setData("text/plain");
     });
 
+    // Adding Input Check Support
     document.addEventListener("keydown", function (event) {
       var minified_html_checkbox = document.querySelector(
         "#minified_html_checkbox > input"
@@ -177,6 +174,8 @@
       var formatted_html_checkbox = document.querySelector(
         "#formatted_html_checkbox > input"
       );
+
+      // Event for Shift + f1
       if (event.shiftKey && event.which == 112) {
         console.log("Shift + f1, was pressed");
 
@@ -185,7 +184,7 @@
           : (minified_html_checkbox.checked = false);
       }
 
-      //
+      // Event for Shift + f2
       else if (event.shiftKey && event.which == 113) {
         console.log("Shift + f2, was pressed");
         formatted_html_checkbox.checked == false
@@ -193,5 +192,18 @@
           : (formatted_html_checkbox.checked = false);
       }
     });
+
+    // Adding Theme Change Option
+
+    var themes = document.querySelectorAll("#themes > input");
+    document
+      .getElementById("themes")
+      .addEventListener("change", function (event) {
+        for (const theme of themes) {
+          theme.checked == true
+            ? document.querySelector("body").classList.add(theme.classList[1])
+            : "";
+        }
+      });
   </script>
 </html>
