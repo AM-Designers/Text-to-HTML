@@ -1,4 +1,6 @@
 /* 
+** Notes
+
 ** Body & Root
 
 ** Visual Editor Settings
@@ -9,6 +11,27 @@
 ** Media Queries
 */
 
+/*******
+** Notes
+********/
+/* 
+
+These are some of the plans to follow.
+* Adding sidebar that slides from left to right (breadcrumb menu)
+* Adding Theme options
+** Add Save option that stores data in your cache about which theme color was choose.
+** Theme Colors: 
+*** BG = #754aff ; Font = White ; 
+*** Green
+*** Orange
+*** Purple
+*** Color Blind Themes
+
+*/
+
+/************
+** Body & Root
+*************/
 :root {
   --box-shadow: 1px 2px 8px #00000038;
   --box-border: 1px solid #ccc;
