@@ -42,6 +42,10 @@ body {
   background: var(--main-bg);
 }
 
+.Top_Content {
+  color: #fff;
+}
+
 /************************ 
 ** Visual Editor Settings 
 *************************/
