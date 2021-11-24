@@ -40,10 +40,10 @@
           <div id="optins">
             <h3>Options</h3>
             <p id="minified_html_checkbox">
-              <input type="checkbox" /> Minified HTML
+              <input type="radio" /> Minified HTML
             </p>
             <p id="formatted_html_checkbox">
-              <input type="checkbox" /> Formatted HTML
+              <input type="radio" /> Formatted HTML
             </p>
           </div>
           <div id="themes">
@@ -205,7 +205,13 @@
                 "body"
               ).style.background = `#${theme.classList[2].substring(1)}`)
             : "";
+            theme.checked == true
+            ? (document.querySelector(
+                "body"
+              ).style.background = `#${theme.classList[2].substring(1)}`)
+            : "";
         }
+        //    #code_output === border-left: 6px solid #78ffa7;
       });
   </script>
 </html>

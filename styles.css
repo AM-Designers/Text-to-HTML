@@ -181,7 +181,7 @@ p {
 ** Radio Buttons
  */
 
-input[type="radio"] {
+#themes > input[type="radio"] {
   visibility: hidden;
   position: relative;
 
@@ -190,7 +190,7 @@ input[type="radio"] {
   height: 50px;
 }
 
-input[type="radio"]:before {
+#themes > input[type="radio"]:before {
   content: "";
   visibility: visible;
   position: absolute;
