@@ -7,6 +7,7 @@ Table of Contents
 ## Visual Editor Settings
 ### Content Area of Visual Editor
 #### Output Settings
+# Custom Features
 # Media Queries
 ###################################
 */
@@ -146,6 +147,30 @@ p {
   border: var(--box-border);
   width: -webkit-fill-available;
   box-shadow: var(--box-shadow);
+}
+
+/****************
+** Cutom Features
+*****************/
+
+/* 
+** Radio Buttons
+ */
+#radio_navy_blue {
+  background-color: #06c;
+}
+#radio_green {
+  background-color: #1cd05b;
+  /* #90C25D */
+}
+#radio_orange {
+  background-color: #f69130;
+}
+#radio_purple {
+  background-color: #754aff;
+}
+#radio_black {
+  background-color: #000;
 }
 
 /***************
