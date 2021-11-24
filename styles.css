@@ -195,13 +195,16 @@ input[type="radio"]:before {
   100% {
     right: 25px;
   }
+  101% {
+    right: 50px;
+  }
 }
 
 .radio_animation:checked:after {
   content: "";
 
   background: #d3d3d3 !important;
-  mix-blend-mode: overlay;
+  mix-blend-mode: hard-light;
   border-radius: 0;
 
   visibility: visible;
@@ -217,7 +220,7 @@ input[type="radio"]:before {
 #radio_orange:checked:after,
 #radio_purple:checked:after,
 #radio_black:checked:after {
-  animation: radio_animation 0.5s linear 0.5s;
+  animation: radio_animation 0.3s linear;
   animation-fill-mode: forwards;
 }
 
