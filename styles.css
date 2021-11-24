@@ -1,9 +1,24 @@
-#code_output {
-  padding: 2rem 1rem;
-  background: #efefef;
-  width: -webkit-fill-available;
+body {
+  background: #ebebeb;
 }
 
+/* Visual Editor Settings */
 #visual-editor {
   margin: 2rem 0;
+  box-shadow: 1px 2px 8px #00000038;
+}
+
+.ql-editor,
+.ql-toolbar.ql-snow {
+  background: white;
+  background: #ffffff;
+}
+
+/* Output Settings */
+#code_output {
+  padding: 2rem 1rem;
+  background: #ffffff;
+  border: 1px solid #ccc;
+  width: -webkit-fill-available;
+  box-shadow: 1px 2px 8px #00000038;
 }
