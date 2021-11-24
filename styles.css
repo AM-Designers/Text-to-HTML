@@ -64,6 +64,13 @@ p {
 /* Top Conent */
 .Top_Content {
   color: #fff;
+}
+
+.text_right {
+  text-align: right;
+}
+
+.text_center {
   text-align: center;
 }
 
