@@ -40,10 +40,12 @@ These are some of the plans to follow.
 }
 body {
   background: var(--main-bg);
+  padding: 2rem 4rem;
 }
 
 .Top_Content {
   color: #fff;
+  text-align: center;
 }
 
 /************************ 
