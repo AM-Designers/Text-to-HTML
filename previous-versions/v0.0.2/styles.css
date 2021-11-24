@@ -1,0 +1,116 @@
+/* 
+** Notes
+
+** Root | Body | Imports
+
+** Visual Editor Settings
+*** Content Area of Visual Editor
+
+** Output Settings
+
+** Media Queries
+*/
+
+/*******
+** Notes
+********/
+/* 
+
+These are some of the plans to follow.
+* Adding sidebar that slides from left to right (breadcrumb menu)
+* Adding Theme options
+** Add Save option that stores data in your cache about which theme color was choose.
+** Theme Colors: 
+*** BG = #0066cc ; Font = White ; 
+*** Green
+*** Orange
+*** Purple = #754aff
+*** Color Blind Themes
+
+*/
+
+/***********************
+** Root | Body | Imports
+************************/
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
+
+:root {
+  --box-shadow: 1px 2px 8px #00000038;
+  --box-border: 1px solid #ccc;
+  --shaded-white: #ebebeb;
+  --main-bg: #0066cc;
+  --heading-font: "Outfit", sans-serif;
+  --normal-font: "Noto Sans", sans-serif;
+}
+body {
+  background: var(--main-bg);
+  padding: 2rem 4rem;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading-font);
+}
+p {
+  font-family: var(--normal-font);
+}
+
+/*  */
+/*  */
+/* Top Conent */
+.Top_Content {
+  color: #fff;
+  text-align: center;
+}
+
+.text_left {
+  text-align: left;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  max-width: 15rem;
+  justify-content: space-between;
+}
+/************************ 
+** Visual Editor Settings 
+*************************/
+#visual-editor {
+  margin: 2rem 0;
+  box-shadow: var(--box-shadow);
+}
+
+.ql-editor,
+.ql-toolbar.ql-snow {
+  background: #fff;
+}
+
+/* Content Area of Visual Editor */
+.ql-editor {
+  padding: 2rem;
+  min-height: 30vh;
+}
+
+/*****************
+** Output Settings 
+******************/
+#code_output {
+  padding: 2rem 1rem;
+  background: #fff;
+  border: var(--box-border);
+  width: -webkit-fill-available;
+  box-shadow: var(--box-shadow);
+}
+
+/***************
+** Media Queries
+****************/
+/* Thinking bg == #754aff */
+@media (min-width: 881px) {
+}

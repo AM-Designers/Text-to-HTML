@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text to HTML</title>
+    <!-- Include stylesheet -->
+    <link
+      href="https://cdn.quilljs.com/1.3.6/quill.snow.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="main_content">
+      <!-- Left Content -->
+      <div id="left_content">
+        <div class="Top_Content">
+          <h1>Visual Editor to HTML</h1>
+          <div class="text_left">
+            <p>Press <strong> Ctrl + C </strong> to copy minified HTML.</p>
+          </div>
+        </div>
+
+        <div id="visual-editor">
+          <div id="editor">
+            <h1>Quill to HTML</h1>
+            Add content here.
+          </div>
+        </div>
+
+        <div id="code_output"><code id="output_html"></code></div>
+      </div>
+
+      <!-- Right Content -->
+      <!-- <div id="right_content">
+        <div class="row">
+          <input type="checkbox" />
+          <p>Minified HTML</p>
+          <p>(Shift + F1)</p>
+        </div>
+
+        <div class="row">
+          <input type="checkbox" />
+          <p>Formatted HTML</p>
+          <p>(Shift + F2)</p>
+        </div>
+      </div> -->
+    </div>
+  </body>
+
+  <!-- Include the Quill library -->
+  <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
+  <script>
+    // Initialize QUill editor
+    var toolbarOptions = [
+      // Headers and Font
+      [{ header: [1, 2, 3, 4, 5, 6, false] }],
+      [{ font: [] }],
+      //   [{ size: ["small", false, "large", "huge"] }],
+
+      // Togglable buttons
+      [{ align: [] }],
+      ["bold", "italic", "underline", "strike"],
+      ["blockquote", "code-block"],
+      //   [{ header: 1 }, { header: 2 }], // custom button values
+
+      [{ list: "ordered" }, { list: "bullet" }],
+      [{ script: "sub" }, { script: "super" }], // superscript/subscript
+      [{ indent: "-1" }, { indent: "+1" }], // outdent/indent
+      [{ direction: "rtl" }], // text direction
+
+      [{ color: [] }, { background: [] }], // dropdown with defaults from theme
+
+      ["clean"], // remove formatting button
+    ];
+
+    var quill = new Quill("#editor", {
+      modules: {
+        toolbar: toolbarOptions,
+      },
+      theme: "snow",
+    });
+
+    function updateHTML() {
+      document.getElementById("output_html").innerText = quill.root.innerHTML;
+    }
+
+    quill.on("text-change", () => {
+      updateHTML();
+    });
+
+    // HTML Formatter
+    // function format(html) {
+    //   var tab = "\t";
+    //   var result = "";
+    //   var indent = "";
+
+    //   html.split(/>\s*</).forEach(function (element) {
+    //     if (element.match(/^\/\w/)) {
+    //       indent = indent.substring(tab.length);
+    //     }
+
+    //     result += indent + "<" + element + ">\r\n";
+
+    //     if (element.match(/^<?\w[^>]*[^\/]$/) && !element.startsWith("input")) {
+    //       indent += tab;
+    //     }
+    //   });
+
+    //   return result.substring(1, result.length - 3);
+    // }
+    function selectText(node) {
+      node = document.getElementById(node);
+
+      if (document.body.createTextRange) {
+        const range = document.body.createTextRange();
+        range.moveToElementText(node);
+        range.select();
+      } else if (window.getSelection) {
+        const selection = window.getSelection();
+        const range = document.createRange();
+        range.selectNodeContents(node);
+        selection.removeAllRanges();
+        selection.addRange(range);
+      } else {
+        console.warn("Could not select text in node: Unsupported browser.");
+      }
+    }
+
+    document.addEventListener("copy", (event) => {
+      console.log("copy action initiated");
+      selectText("output_html");
+      event.clipboardData.setData("text/plain", selection);
+    });
+  </script>
+</html>
