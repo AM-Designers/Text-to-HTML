@@ -171,11 +171,26 @@
     });
 
     document.addEventListener("keydown", function (event) {
-      console.log(event.which);
+      var minified_html_checkbox = document.querySelector(
+        "#minified_html_checkbox > input"
+      );
+      var formatted_html_checkbox = document.querySelector(
+        "#formatted_html_checkbox > input"
+      );
       if (event.shiftKey && event.which == 112) {
         console.log("Shift + f1, was pressed");
-      } else if (event.shiftKey && event.which == 113) {
+
+        minified_html_checkbox.checked == false
+          ? (minified_html_checkbox.checked = true)
+          : (minified_html_checkbox.checked = false);
+      }
+
+      //
+      else if (event.shiftKey && event.which == 113) {
         console.log("Shift + f2, was pressed");
+        formatted_html_checkbox.checked == false
+          ? (formatted_html_checkbox.checked = true)
+          : (formatted_html_checkbox.checked = false);
       }
     });
   </script>
