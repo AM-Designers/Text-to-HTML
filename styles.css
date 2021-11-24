@@ -1,14 +1,14 @@
 /* 
-** Notes
-
-** Root | Body | Imports
-
-** Visual Editor Settings
-*** Content Area of Visual Editor
-
-** Output Settings
-
-** Media Queries
+Table of Contents
+###################################
+# Notes
+# Root | Body | Imports
+# Main Conent
+## Visual Editor Settings
+### Content Area of Visual Editor
+#### Output Settings
+# Media Queries
+###################################
 */
 
 /*******
@@ -45,7 +45,6 @@ These are some of the plans to follow.
 }
 body {
   background: var(--main-bg);
-  padding: 2rem 4rem;
 }
 h1,
 h2,
@@ -57,13 +56,6 @@ h6 {
 }
 p {
   font-family: var(--normal-font);
-}
-
-/*  */
-/*  */
-/* Top Conent */
-.Top_Content {
-  color: #fff;
 }
 
 .text_right {
@@ -78,6 +70,27 @@ p {
   text-align: left;
 }
 
+/*************
+** Main Conent 
+**************/
+#main_content {
+  display: flex;
+  direction: row;
+}
+
+.Top_Content {
+  color: #fff;
+}
+#left_content {
+  margin: 2rem 4rem;
+  width: 70vw;
+}
+#right_content {
+  width: 30vw;
+  background: white;
+  padding: 2rem;
+}
+
 .row {
   display: flex;
   flex-direction: row;
@@ -85,6 +98,21 @@ p {
   max-width: 15rem;
   justify-content: space-between;
 }
+
+#minified_html_checkbox:after {
+  content: "(Shift + F1)";
+  color: rgba(0, 0, 0, 0.5);
+  position: relative;
+  left: 5px;
+}
+
+#formatted_html_checkbox:after {
+  content: "(Shift + F2)";
+  color: rgba(0, 0, 0, 0.5);
+  position: relative;
+  left: 5px;
+}
+
 /************************ 
 ** Visual Editor Settings 
 *************************/

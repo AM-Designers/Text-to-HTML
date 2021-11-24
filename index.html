@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="main_content">
+    <div id="main_content">
       <!-- Left Content -->
       <div id="left_content">
         <div class="Top_Content">
@@ -35,17 +35,12 @@
 
       <!-- Right Content  -->
       <div id="right_content">
-        <div class="row">
-          <input type="checkbox" />
-          <p>Minified HTML</p>
-          <p>(Shift + F1)</p>
-        </div>
-
-        <div class="row">
-          <input type="checkbox" />
-          <p>Formatted HTML</p>
-          <p>(Shift + F2)</p>
-        </div>
+        <p id="minified_html_checkbox">
+          <input type="checkbox" /> Minified HTML
+        </p>
+        <p id="formatted_html_checkbox">
+          <input type="checkbox" /> Formatted HTML
+        </p>
       </div>
     </div>
   </body>
