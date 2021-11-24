@@ -33,6 +33,7 @@ These are some of the plans to follow.
 /***********************
 ** Root | Body | Imports
 ************************/
+/* Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
 
@@ -48,6 +49,8 @@ body {
   background: var(--main-bg);
   margin: 0;
 }
+
+/* Headings */
 h1,
 h2,
 h3,
@@ -60,6 +63,7 @@ p {
   font-family: var(--normal-font);
 }
 
+/* Alignment */
 .text_right {
   text-align: right;
 }
@@ -71,6 +75,23 @@ p {
 .text_left {
   text-align: left;
 }
+
+/* Colors */
+/* .navy_blue {
+  background-color: #06c;
+}
+.green {
+  background-color: #1cd05b;
+}
+.orange {
+  background-color: #f69130;
+}
+.purple {
+  background-color: #754aff;
+}
+.black {
+  background-color: #000;
+} */
 
 /*************
 ** Main Conent 
@@ -227,6 +248,7 @@ input[type="radio"]:before {
   border: 2px solid #06c;
   background-color: #06c;
 }
+
 .radio_green:before {
   border: 2px solid #1cd05b;
   background-color: #1cd05b;

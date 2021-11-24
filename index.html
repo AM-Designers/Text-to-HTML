@@ -50,27 +50,27 @@
             <h3>Themes</h3>
             <input
               type="radio"
-              class="radio_animation radio_navy_blue"
+              class="radio_animation radio_navy_blue a06c"
               name="radio_colors"
             />
             <input
               type="radio"
-              class="radio_animation radio_green"
+              class="radio_animation radio_green a1cd05b"
               name="radio_colors"
             />
             <input
               type="radio"
-              class="radio_animation radio_orange"
+              class="radio_animation radio_orange af69130"
               name="radio_colors"
             />
             <input
               type="radio"
-              class="radio_animation radio_purple"
+              class="radio_animation radio_purple a754aff"
               name="radio_colors"
             />
             <input
               type="radio"
-              class="radio_animation radio_black"
+              class="radio_animation radio_black a000"
               name="radio_colors"
             />
           </div>
@@ -201,7 +201,9 @@
       .addEventListener("change", function (event) {
         for (const theme of themes) {
           theme.checked == true
-            ? document.querySelector("body").classList.add(theme.classList[1])
+            ? (document.querySelector(
+                "body"
+              ).style.background = `#${theme.classList[2].substring(1)}`)
             : "";
         }
       });
