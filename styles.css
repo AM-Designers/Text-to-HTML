@@ -21,10 +21,10 @@ These are some of the plans to follow.
 * Adding Theme options
 ** Add Save option that stores data in your cache about which theme color was choose.
 ** Theme Colors: 
-*** BG = #754aff ; Font = White ; 
+*** BG = #0066cc ; Font = White ; 
 *** Green
 *** Orange
-*** Purple
+*** Purple = #754aff
 *** Color Blind Themes
 
 */
@@ -36,9 +36,10 @@ These are some of the plans to follow.
   --box-shadow: 1px 2px 8px #00000038;
   --box-border: 1px solid #ccc;
   --shaded-white: #ebebeb;
+  --main-bg: #0066cc;
 }
 body {
-  background: var(--shaded-white);
+  background: var(--main-bg);
 }
 
 /************************ 
