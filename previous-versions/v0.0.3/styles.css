@@ -1,0 +1,275 @@
+/* 
+Table of Contents
+###################################
+# Notes
+# Root | Body | Imports
+# Main Conent
+## Visual Editor Settings
+### Content Area of Visual Editor
+#### Output Settings
+# Custom Features
+# Media Queries
+###################################
+*/
+
+/*******
+** Notes
+********/
+/* 
+
+These are some of the plans to follow.
+* Adding sidebar that slides from left to right (breadcrumb menu)
+* Adding Theme options
+** Add Save option that stores data in your cache about which theme color was choose.
+** Theme Colors: 
+*** BG = #0066cc ; Font = White ; 
+*** Green
+*** Orange
+*** Purple = #754aff
+*** Color Blind Themes
+
+*/
+
+/***********************
+** Root | Body | Imports
+************************/
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
+
+:root {
+  --box-shadow: 1px 2px 8px #00000038;
+  --box-border: 1px solid #ccc;
+  --shaded-white: #ebebeb;
+  --main-bg: #0066cc;
+  --heading-font: "Outfit", sans-serif;
+  --normal-font: "Noto Sans", sans-serif;
+}
+body {
+  background: var(--main-bg);
+  margin: 0;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading-font);
+}
+p {
+  font-family: var(--normal-font);
+}
+
+/* Alignment */
+.text_right {
+  text-align: right;
+}
+
+.text_center {
+  text-align: center;
+}
+
+.text_left {
+  text-align: left;
+}
+
+/* Colors */
+/* .navy_blue {
+  background-color: #06c;
+}
+.green {
+  background-color: #1cd05b;
+}
+.orange {
+  background-color: #f69130;
+}
+.purple {
+  background-color: #754aff;
+}
+.black {
+  background-color: #000;
+} */
+
+/*************
+** Main Conent 
+**************/
+#main_content {
+  display: flex;
+}
+
+.Top_Content {
+  color: #fff;
+}
+#left_content {
+  margin: 2rem 4rem;
+  width: 80vw;
+}
+#right_content {
+  float: right;
+}
+#right_inner_content {
+  background: white;
+  box-shadow: var(--box-shadow);
+
+  width: 20vw;
+  height: 100vh;
+
+  padding: 2rem;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  max-width: 15rem;
+}
+
+#minified_html_checkbox:after {
+  content: "(Shift + F1)";
+}
+#formatted_html_checkbox:after {
+  content: "(Shift + F2)";
+}
+
+#formatted_html_checkbox:after,
+#minified_html_checkbox:after {
+  color: rgba(0, 0, 0, 0.5);
+  position: relative;
+  left: 5px;
+}
+
+/************************ 
+** Visual Editor Settings 
+*************************/
+#visual-editor {
+  margin: 2rem 0;
+  box-shadow: var(--box-shadow);
+}
+
+.ql-editor,
+.ql-toolbar.ql-snow {
+  background: #fff;
+}
+
+/* Content Area of Visual Editor */
+.ql-editor {
+  padding: 2rem;
+  min-height: 30vh;
+}
+
+/*****************
+** Output Settings 
+******************/
+#code_output {
+  padding: 2rem 1rem;
+  background: #fff;
+  border: var(--box-border);
+  width: -webkit-fill-available;
+  box-shadow: var(--box-shadow);
+}
+
+/****************
+** Cutom Features
+*****************/
+
+/* 
+** Radio Buttons
+ */
+
+#themes > input[type="radio"] {
+  visibility: hidden;
+  position: relative;
+
+  margin-left: 5px;
+  width: 50px;
+  height: 50px;
+}
+
+#themes > input[type="radio"]:before {
+  content: "";
+  visibility: visible;
+  position: absolute;
+
+  border-radius: 50%;
+
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+/* input[type="radio"]:checked:before {
+  background-color: #eb6864 !important; 
+  }
+*/
+
+@keyframes radio_animation {
+  0% {
+    right: 50px;
+  }
+  100% {
+    right: 25px;
+  }
+  101% {
+    right: 50px;
+  }
+}
+
+.radio_animation:checked:after {
+  content: "";
+
+  background: #d3d3d3 !important;
+  mix-blend-mode: hard-light;
+  border-radius: 0;
+
+  visibility: visible;
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.radio_navy_blue:checked:after,
+.radio_green:checked:after,
+.radio_orange:checked:after,
+.radio_purple:checked:after,
+.radio_black:checked:after {
+  animation: radio_animation 0.3s linear;
+  animation-fill-mode: forwards;
+}
+
+.radio_navy_blue:before {
+  border: 2px solid #06c;
+  background-color: #06c;
+}
+
+.radio_green:before {
+  border: 2px solid #1cd05b;
+  background-color: #1cd05b;
+  /* #90C25D */
+}
+.radio_orange:before {
+  border: 2px solid #f69130;
+  background-color: #f69130;
+}
+.radio_purple:before {
+  border: 2px solid #754aff;
+  background-color: #754aff;
+}
+.radio_black:before {
+  border: 2px solid #000;
+  background-color: #000;
+}
+
+/***************
+** Media Queries
+****************/
+/* Thinking bg == #754aff */
+@media (min-width: 881px) {
+}

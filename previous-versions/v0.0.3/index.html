@@ -50,27 +50,27 @@
             <h3>Themes</h3>
             <input
               type="radio"
-              class="radio_animation radio_navy_blue a06c"
+              class="radio_animation radio_navy_blue a06c a8583ff"
               name="radio_colors"
             />
             <input
               type="radio"
-              class="radio_animation radio_green a1cd05b"
+              class="radio_animation radio_green a1cd05b af69130"
               name="radio_colors"
             />
             <input
               type="radio"
-              class="radio_animation radio_orange af69130"
+              class="radio_animation radio_orange af69130 a1cd05b"
               name="radio_colors"
             />
             <input
               type="radio"
-              class="radio_animation radio_purple a754aff"
+              class="radio_animation radio_purple a754aff aff4444"
               name="radio_colors"
             />
             <input
               type="radio"
-              class="radio_animation radio_black a000"
+              class="radio_animation radio_black a000 a8e8e8e"
               name="radio_colors"
             />
           </div>
@@ -200,12 +200,19 @@
       .getElementById("themes")
       .addEventListener("change", function (event) {
         for (const theme of themes) {
-          theme.checked == true
-            ? (document.querySelector(
-                "body"
-              ).style.background = `#${theme.classList[2].substring(1)}`)
-            : "";
+          if (theme.checked == true) {
+            document.querySelector(
+              "body"
+            ).style.background = `#${theme.classList[2].substring(1)}`;
+
+            document.querySelector(
+              "#code_output"
+            ).style.borderLeft = `6px solid #${theme.classList[3].substring(
+              1
+            )}`;
+          }
         }
+        //    #code_output === border-left: 6px solid #78ffa7;
       });
   </script>
 </html>
