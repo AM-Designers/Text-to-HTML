@@ -45,6 +45,7 @@ These are some of the plans to follow.
 }
 body {
   background: var(--main-bg);
+  margin: 0;
 }
 h1,
 h2,
@@ -86,7 +87,11 @@ p {
   width: 70vw;
 }
 #right_content {
+  float: right;
+}
+#right_inner_content {
   width: 30vw;
+  height: 100vh;
   background: white;
   padding: 2rem;
 }
