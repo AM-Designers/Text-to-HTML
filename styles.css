@@ -129,15 +129,19 @@ p {
   max-width: 15rem;
 }
 
-#minified_html_checkbox:after {
+#minified_html_checkbox > p:after {
   content: "(Shift + F1)";
 }
-#formatted_html_checkbox:after {
+#formatted_html_checkbox > p:after {
   content: "(Shift + F2)";
 }
+#both_html_checkbox > p:after {
+  content: "(Shift + F4)";
+}
 
-#formatted_html_checkbox:after,
-#minified_html_checkbox:after {
+#both_html_checkbox > p,
+#formatted_html_checkbox > p:after,
+#minified_html_checkbox > p:after {
   color: rgba(0, 0, 0, 0.5);
   position: relative;
   left: 5px;
@@ -165,6 +169,10 @@ p {
 /*****************
 ** Output Settings 
 ******************/
+#code_formatted_output {
+  margin: 2rem 0;
+}
+#code_formatted_output,
 #code_output {
   padding: 2rem 1rem;
   background: #fff;

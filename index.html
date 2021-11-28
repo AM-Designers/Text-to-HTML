@@ -31,6 +31,9 @@
         </div>
 
         <div id="code_output"><code id="output_html"></code></div>
+        <div id="code_formatted_output">
+          <code id="output_formatted_html"></code>
+        </div>
       </div>
 
       <!-- Right Content  -->
@@ -39,12 +42,17 @@
           <h2>Configuration</h2>
           <div id="optins">
             <h3>Options</h3>
-            <p id="minified_html_checkbox">
-              <input type="radio" /> Minified HTML
-            </p>
-            <p id="formatted_html_checkbox">
-              <input type="radio" /> Formatted HTML
-            </p>
+            <div>
+              <label name="formation_checkbox" id="minified_html_checkbox">
+                <p><input type="radio" /> Minified HTML</p>
+              </label>
+              <label name="formation_checkbox" id="formatted_html_checkbox">
+                <p><input type="radio" /> Formatted HTML</p>
+              </label>
+              <label name="formation_checkbox" id="both_html_checkbox">
+                <p><input type="radio" /> Both</p>
+              </label>
+            </div>
           </div>
           <div id="themes">
             <h3>Themes</h3>
@@ -115,6 +123,9 @@
 
     function updateHTML() {
       document.getElementById("output_html").innerText = quill.root.innerHTML;
+      document.getElementById("output_formatted_html").innerText = format(
+        quill.root.innerHTML
+      );
     }
 
     quill.on("text-change", () => {
@@ -122,25 +133,25 @@
     });
 
     // HTML Formatter
-    // function format(html) {
-    //   var tab = "\t";
-    //   var result = "";
-    //   var indent = "";
+    function format(html) {
+      var tab = "\t";
+      var result = "";
+      var indent = "";
 
-    //   html.split(/>\s*</).forEach(function (element) {
-    //     if (element.match(/^\/\w/)) {
-    //       indent = indent.substring(tab.length);
-    //     }
+      html.split(/>\s*</).forEach(function (element) {
+        if (element.match(/^\/\w/)) {
+          indent = indent.substring(tab.length);
+        }
 
-    //     result += indent + "<" + element + ">\r\n";
+        result += indent + "<" + element + ">\r\n";
 
-    //     if (element.match(/^<?\w[^>]*[^\/]$/) && !element.startsWith("input")) {
-    //       indent += tab;
-    //     }
-    //   });
+        if (element.match(/^<?\w[^>]*[^\/]$/) && !element.startsWith("input")) {
+          indent += tab;
+        }
+      });
 
-    //   return result.substring(1, result.length - 3);
-    // }
+      return result.substring(1, result.length - 3);
+    }
     function selectText(node) {
       node = document.getElementById(node);
       // Seclting Data
@@ -169,10 +180,13 @@
     // Adding Input Check Support
     document.addEventListener("keydown", function (event) {
       var minified_html_checkbox = document.querySelector(
-        "#minified_html_checkbox > input"
+        "#minified_html_checkbox > p > input"
       );
       var formatted_html_checkbox = document.querySelector(
-        "#formatted_html_checkbox > input"
+        "#formatted_html_checkbox > p > input"
+      );
+      var both_html_checkbox = document.querySelector(
+        "#both_html_checkbox > p > input"
       );
 
       // Event for Shift + f1
@@ -190,6 +204,14 @@
         formatted_html_checkbox.checked == false
           ? (formatted_html_checkbox.checked = true)
           : (formatted_html_checkbox.checked = false);
+      }
+
+      // Event for Shift + f4
+      else if (event.shiftKey && event.which == 115) {
+        console.log("Shift + f4, was pressed");
+        both_html_checkbox.checked == false
+          ? (both_html_checkbox.checked = true)
+          : (both_html_checkbox.checked = false);
       }
     });
 
