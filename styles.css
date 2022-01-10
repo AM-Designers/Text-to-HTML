@@ -275,6 +275,25 @@ p {
   background-color: #000;
 }
 
+/*****************
+** Request Feature
+******************/
+#request-feature {
+  /* margin-top: 1rem; */
+  margin-top: 30vh;
+}
+#request_feature_button {
+  padding: 15px;
+  font-size: 16px;
+  width: -webkit-fill-available;
+  background: #0066cc;
+  color: white;
+  border: none;
+  font-weight: 600;
+  border-radius: 5px;
+  box-shadow: 0 0 2px black;
+}
+
 /***************
 ** Media Queries
 ****************/
