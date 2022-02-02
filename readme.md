@@ -18,6 +18,7 @@ https://acme-developers.github.io/text-to-html/index.html
 - Will support direct changes on minified and formatted
 - Responsive Design
 - Make UI better
+- Adding a pop of "Copied Data" or something like that. <!--(Hiding the notification display with none; use animation to bring it up; and use alternative to return it to its original position) -->
 
 ## Sources
 
