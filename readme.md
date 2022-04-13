@@ -5,16 +5,15 @@ An application that converts you visual changes to an HTML format for convinence
 https://am-designers.github.io/Text-to-HTML/
 
 ## Features
-
-- Changes text from Visual to HTML.
 - Supports Theme Changes
-- Suppors Minifed and Formatted Switching
-- Auto Copy
+- Auto Copy and Pasting Support.
 - Different availibility of fonts.
+- Changes text from Visual to HTML.
+- Suppors Minifed and Formatted Switching
+
 
 ## Upcoming Features
 
-- Adding support where pressing Ctrl + V directly pastes data and generates visual HTML.
 - Will support direct changes on minified and formatted
 - Responsive Design
 - Make UI better
