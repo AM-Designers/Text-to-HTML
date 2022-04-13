@@ -240,13 +240,23 @@
         }
       });
 
+    // Minify
+    function minify(data) {
+      var minified_html = data.replace(/\s+/g, " ");
+      console.log(minified_html);
+      return minified_html;
+    }
+
     // Ctrl + V directly pastes the answer
     document.addEventListener("keydown", async function (event) {
       if (event.ctrlKey && event.which == 86) {
         console.log("Ctrl + V, was pressed");
         // get data from clipboard
-        var data = await navigator.clipboard.readText();
-        document.querySelector("#editor > .ql-editor").innerHTML = data;
+        var data = await navigator.clipboard.readText(),
+          // paste minify html
+          minifiedHTML = await minify(data);
+
+        document.querySelector("#editor > .ql-editor").innerHTML = minifiedHTML;
       }
     });
   </script>
