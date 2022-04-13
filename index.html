@@ -240,18 +240,7 @@
         }
       });
 
-    // Ctrl + V should directly paste data in quill editor
-    // function getData(text) {
-    //   var data = text.split("\n");
-    //   var data_array = [];
-    //   for (const data_element of data) {
-    //     if (data_element.startsWith("<")) {
-    //       data_array.push(data_element);
-    //     }
-    //   }
-    //   return data_array;
-    // }
-
+    // Ctrl + V directly pastes the answer
     document.addEventListener("keydown", async function (event) {
       if (event.ctrlKey && event.which == 86) {
         console.log("Ctrl + V, was pressed");
@@ -260,10 +249,5 @@
         document.querySelector("#editor > .ql-editor").innerHTML = data;
       }
     });
-
-    function pasteHTML(html) {
-      var range = quill.getSelection(true);
-      quill.updateContents(quill.clipboard.convert(html), Quill.sources.USER);
-    }
   </script>
 </html>
