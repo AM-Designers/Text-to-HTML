@@ -22,3 +22,5 @@ https://am-designers.github.io/Text-to-HTML/
 ## Sources
 
 Following sources have been used to create this.
+
+- [Quill JS](https://quilljs.com/)
